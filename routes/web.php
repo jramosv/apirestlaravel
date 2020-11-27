@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('search','SearchController@index')->name('searches.search');
+Route::post('search','SearchController@search')->name('searches.search');
+
+Route::resource('searches','SearchController');
